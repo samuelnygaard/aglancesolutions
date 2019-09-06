@@ -29,7 +29,7 @@ jobs:
     - name: Change dir
       run: cd dist_
     - name: Git add all
-      run: git add -all
+      run: git add --all
     - name: Git commit
       run: git commit -m "Deploy updates"
     - name: Git push
