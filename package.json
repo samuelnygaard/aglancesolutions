@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "build:prod-github": "ng build --prod --base-href /aglancesolutions/",
+    "i18n": "ngx-translate-extract --input ./src --output ./src/assets/i18n/en/translation.json -k --clean -f namespaced-json -r --sort",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -35,6 +36,7 @@
     "@angular/cli": "~8.3.3",
     "@angular/compiler-cli": "~8.2.0",
     "@angular/language-service": "~8.2.0",
+    "@biesbjerg/ngx-translate-extract": "^3.0.5",
     "@types/node": "~12.7.4",
     "ts-node": "~8.3.0",
     "tslint": "~5.19.0",
