@@ -20,9 +20,10 @@ jobs:
       run: npm install
 #    - name: Lint
 #      run: npm run lint
+    - name: git worktree
+      run: git worktree add dist_ gh-pages
     - name: Build
       run: npm run build:prod-github
-      
     - name: Move dist files
       run: mv ./dist/aglancesolutions/* ./dist_
     - name: Change dir
