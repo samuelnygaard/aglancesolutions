@@ -16,21 +16,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.10
-    - name: Install dependencies
-      run: npm install
-#    - name: Lint
-#      run: npm run lint
-    - name: git worktree
-      run: git worktree add dist_ gh-pages
-    - name: Build
-      run: npm run build:prod-github
-    - name: Move dist files
-      run: mv ./dist/aglancesolutions/* ./dist_
-    - name: Change dir
-      run: cd dist_
-    - name: Git add all
-      run: git add --all
-    - name: Git commit
-      run: git commit -m "Deploy updates"
-    - name: Git push
-      run: git push origin gh-pages
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.build-key }}
+        BRANCH: gh-pages
+        FOLDER: dist/aglancesolutions
+        BUILD_SCRIPT: npm install && npm run build:prod-github
