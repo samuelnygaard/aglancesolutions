@@ -1,2 +1,14 @@
-<p translate>site works!</p>
-<span>{{'test' | translate }}</span>
+<mat-toolbar color="primary" style="height: 68px" fxLayout="row" fxLayoutAlign="start center">
+    <img
+        src="https://static.wixstatic.com/media/3a4b04_e801463bebf445f592e124ed83964450~mv2.png/v1/crop/x_4,y_0,w_1196,h_241/fill/w_278,h_56,al_c,q_80,usm_0.66_1.00_0.01/Aglance-Solutions-Logo.webp">
+    <a routerLink="/academic">academic</a>
+    <a routerLink="/enterprise">enterprise</a>
+    <a routerLink="/healthcare">healthcare</a>
+    <a routerLink="/research">research</a>
+</mat-toolbar>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<div>
+    Footer
+</div>

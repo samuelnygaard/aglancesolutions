@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Define the default theme (same as the example above).
+$aglance-primary: mat-palette($mat-indigo);
+$aglance-accent:  mat-palette($mat-pink, A200, A100, A400);
+$aglance-theme:   mat-light-theme($aglance-primary, $aglance-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($aglance-theme);
