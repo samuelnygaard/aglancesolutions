@@ -1,4 +1,4 @@
-name: CI
+name: Build & Deploy
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN.build-key }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: dist/aglancesolutions
         BUILD_SCRIPT: npm install && npm run build:prod-github
