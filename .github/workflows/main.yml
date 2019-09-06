@@ -18,7 +18,16 @@ jobs:
         node-version: 12.10
     - name: Install dependencies
       run: npm install
-    - name: Lint
-      run: npm run lint
-    - name: Build
-      run: npm run build -- --prod
+#    - name: Lint
+#      run: npm run lint
+
+    - name: Move dist files
+      run: mv ./dist/aglancesolutions/* ./dist_
+    - name: Change dir
+      run: cd dist_
+    - name: Git add all
+      run: git add -all
+    - name: Git commit
+      run: git commit -m "Deploy updates"
+    - name: Git push
+      run: git push origin gh-pages
