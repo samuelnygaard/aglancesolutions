@@ -1,7 +1,9 @@
-.content {
-    flex: 1 0 auto;
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.page-footer {
-    flex-shrink: 0;
+.content {
+    flex: 1;
 }
