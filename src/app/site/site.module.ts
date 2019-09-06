@@ -47,7 +47,7 @@ const routes: Routes = [
     HealthcareComponent,
     ResearchComponent
   ],
-  imports: [CommonModule, RouterModule.forRoot(routes), SharedModule],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
   exports: [RouterModule]
 })
 export class SiteModule {}

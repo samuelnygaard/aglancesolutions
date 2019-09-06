@@ -7,15 +7,24 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { SiteModule } from './site/site.module';
+import { Routes, RouterModule } from '@angular/router';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '/translation.json');
 }
 
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./site/site.module').then(mod => mod.SiteModule)
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
+];
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -26,9 +35,9 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    }),
-    SiteModule
+    })
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
